@@ -61,8 +61,9 @@ function loadSkills() {
     .then(skills => {
       const techContainer = document.getElementById('skills-technical');
       const designContainer = document.getElementById('skills-design');
+      const networkContainer = document.getElementById('skills-network');
 
-      skills.technical.forEach(skill => {
+      const renderSkill = (container, skill) => {
         const el = document.createElement('div');
         el.innerHTML = `
           <div class="flex justify-between mb-1">
@@ -73,22 +74,14 @@ function loadSkills() {
             <div class="skill-bar" style="width: ${skill.level}%"></div>
           </div>
         `;
-        techContainer.appendChild(el);
-      });
+        container.appendChild(el);
+      };
 
-      skills.design.forEach(skill => {
-        const el = document.createElement('div');
-        el.innerHTML = `
-          <div class="flex justify-between mb-1">
-            <span class="text-sm">${skill.name}</span>
-            <span class="text-sm">${skill.level}%</span>
-          </div>
-          <div class="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-            <div class="skill-bar" style="width: ${skill.level}%"></div>
-          </div>
-        `;
-        designContainer.appendChild(el);
-      });
+      skills.technical.forEach(skill => renderSkill(techContainer, skill));
+      skills.design.forEach(skill => renderSkill(designContainer, skill));
+      if (skills.network) {
+        skills.network.forEach(skill => renderSkill(networkContainer, skill));
+      }
     });
 }
 
