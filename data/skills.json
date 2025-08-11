@@ -1,0 +1,12 @@
+{
+  "technical": [
+    {"name": "PHP & Laravel", "level": 90},
+    {"name": "ASP.NET MVC", "level": 75},
+    {"name": "MySQL & PostgreSQL", "level": 85}
+  ],
+  "design": [
+    {"name": "HTML/CSS & Tailwind", "level": 95},
+    {"name": "JavaScript", "level": 80},
+    {"name": "Git & GitHub", "level": 85}
+  ]
+}
