@@ -8,5 +8,11 @@
     {"name": "HTML/CSS & Tailwind", "level": 95},
     {"name": "JavaScript", "level": 80},
     {"name": "Git & GitHub", "level": 85}
+  ],
+  "network": [
+    {"name": "network +", "level": 100},
+    {"name": "MTCNA", "level": 80},
+    {"name": "ZABBIX", "level": 30},
+    {"name": "PRTG", "level": 60},
   ]
 }
