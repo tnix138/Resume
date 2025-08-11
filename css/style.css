@@ -1,0 +1,5 @@
+
+/* استایل سفارشی */
+h2 {
+  @apply text-xl font-bold text-indigo-600;
+}
