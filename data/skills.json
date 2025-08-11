@@ -13,6 +13,6 @@
     {"name": "network +", "level": 100},
     {"name": "MTCNA", "level": 80},
     {"name": "ZABBIX", "level": 30},
-    {"name": "PRTG", "level": 60},
+
   ]
 }
