@@ -18,6 +18,5 @@ python3 -m http.server
 
 پس از اجرا، آدرس [http://localhost:8000](http://localhost:8000) را در مرورگر باز کنید.
 
-## پیش‌نمایش
-![نمایش پروژه](assets/img/Profile.jpg)
+
 
