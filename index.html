@@ -1,129 +1,387 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>رزومه من</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <style>
-        body { font-family: 'Vazirmatn', sans-serif; }
-        .skill-bar {
-            background: linear-gradient(90deg, #4f46e5, #7c3aed);
-            height: 8px;
-            border-radius: 4px;
-            transition: width 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-2px);
-            transition: transform 0.2s ease;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>توحید رجبعلی · توسعه‌دهنده دات‌نت</title>
 
-    </style>
+  <!-- Bootstrap 5.3 (آخرین نسخه) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome 6 (آخرین نسخه) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- فونت وزیر (دست‌نویس‌تر) -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    body {
+      background: #f3efe8;
+      background-image: radial-gradient(circle at 15% 25%, rgba(200, 175, 150, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 85% 70%, rgba(170, 140, 115, 0.07) 0%, transparent 45%);
+      min-height: 100vh;
+      padding: 2.5rem 1rem;
+    }
+
+    .card-soft {
+      background: rgba(253, 249, 242, 0.78);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(210, 190, 172, 0.45);
+      border-radius: 42px;
+      box-shadow: 0 18px 42px -18px rgba(70, 50, 35, 0.18);
+      transition: all 0.2s ease;
+    }
+
+    .card-soft:hover {
+      background: rgba(250, 243, 235, 0.88);
+      border-color: #cbb5a2;
+      box-shadow: 0 24px 48px -20px #7f6856;
+    }
+
+    .badge-hand {
+      background: #e3d5c8;
+      color: #2f1f14;
+      padding: 0.4rem 1.4rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      border: 1px solid #cfbbaa;
+      display: inline-block;
+      box-shadow: inset 0 -1px 0 #f2e7de;
+    }
+
+    .badge-hand-dark {
+      background: #d3c1b2;
+      border-color: #b8a18d;
+    }
+
+    .greeting-stripe {
+      border-right: 4px solid #bea48e;
+      padding-right: 1rem;
+      color: #5d4a38;
+      font-weight: 350;
+    }
+
+    .name-title {
+      font-size: 4.2rem;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #1a120c;
+      letter-spacing: -1.5px;
+    }
+
+    .name-title small {
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: #7a6453;
+      display: block;
+      margin-top: 0.1rem;
+    }
+
+    .role-pill {
+      background: #dccfc2;
+      padding: 0.3rem 2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #2b1d13;
+      border: 1px solid #bfab99;
+      display: inline-block;
+    }
+
+    .about-box {
+      background: rgba(235, 222, 210, 0.30);
+      padding: 0.8rem 1.8rem;
+      border-radius: 60px 20px 60px 20px;
+      border: 1px solid #dbcbbe;
+      color: #3f3025;
+      font-weight: 350;
+      max-width: 85%;
+    }
+
+    .pill-skill {
+      background: #e4d7cb;
+      padding: 0.25rem 1.5rem;
+      border-radius: 60px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #291e16;
+      border: 1px solid #cfbcaa;
+      display: inline-block;
+      box-shadow: inset 0 -1px 0 #f0e5db;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e140e;
+      border-bottom: 3px dotted #ccb9a8;
+      padding-bottom: 0.3rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .card-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card-list li {
+      padding: 0.2rem 0;
+      font-weight: 350;
+      color: #3f2d1f;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card-list li::before {
+      content: "•";
+      color: #a8846d;
+      font-weight: 900;
+      margin-left: 0.3rem;
+    }
+
+    .project-card {
+      background: #f2e7dd;
+      border-radius: 28px;
+      padding: 1.4rem 2rem;
+      margin-bottom: 1rem;
+      border: 1px solid #dccbbe;
+      box-shadow: 0 4px 12px -10px #ac927f;
+      transition: 0.1s;
+    }
+
+    .project-card:hover {
+      background: #f5ece3;
+      border-color: #c8b19d;
+    }
+
+    .project-card h5 {
+      font-weight: 700;
+      color: #261b13;
+    }
+
+    .project-card p {
+      color: #4a382b;
+      font-weight: 350;
+      margin-top: 0.2rem;
+    }
+
+    .tag-cluster span {
+      background: #dccfc2;
+      padding: 0.2rem 1.8rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #271b13;
+      border: 1px solid #bfab99;
+      display: inline-block;
+      margin-left: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-note {
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid #d6c3b3;
+      text-align: center;
+      color: #5b493a;
+      font-weight: 300;
+    }
+
+    .footer-note strong {
+      font-weight: 600;
+      color: #2b1d13;
+    }
+
+    @media (max-width: 768px) {
+      .name-title {
+        font-size: 2.8rem;
+      }
+      .name-title small {
+        font-size: 1.3rem;
+      }
+      .about-box {
+        max-width: 100%;
+      }
+      body {
+        padding: 1.5rem 0.8rem;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+<body>
 
-    <!-- هدر -->
-    <header class="text-center py-10 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
-        <div class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-lg bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
-            <span class="text-4xl font-bold text-white">ت</span>
+<div class="container">
+
+  <!-- کارت اصلی -->
+  <div class="card-soft p-4 p-md-5">
+
+    <!-- header: نام + تگ‌ها -->
+    <div class="d-flex flex-wrap justify-content-between align-items-start mb-3">
+      <div>
+        <div class="greeting-stripe mb-2">
+          <span class="badge-hand"><i class="fa-regular fa-circle-dot me-1"></i> توسعه‌دهنده بک‌اند</span>
+          <span class="mx-2 text-secondary" style="opacity:0.5;">|</span>
+          <span class="text-secondary" style="font-weight:300;">سامانه‌های سازمانی</span>
         </div>
-        <h1 class="text-3xl font-bold">توحید رجبعلی</h1>
-        <p class="text-sm mt-2">توسعه‌دهنده وب | PHP, Laravel, ASP.NET</p>
-        <div class="mt-4 flex justify-center space-x-4 space-x-reverse">
-            <a href="mailto:tohid@example.com" class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm hover:bg-opacity-30 transition">
-                📧 tohid@example.com
-            </a>
-            <a href="tel:+989123456789" class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm hover:bg-opacity-30 transition">
-                📱 +98 912 345 6789
-            </a>
+        <h1 class="name-title">
+          توحید رجبعلی
+          <small>پشت‌پرده‌ی دات‌نت</small>
+        </h1>
+        <div class="role-pill mt-2">
+          <i class="fa-solid fa-code me-1"></i> ASP.NET Core · EF Core
         </div>
-    </header>
+      </div>
+      <div class="mt-2 mt-md-0">
+        <span class="badge-hand badge-hand-dark"><i class="fa-regular fa-key"></i> JWT</span>
+        <span class="badge-hand badge-hand-dark me-1"><i class="fa-solid fa-database"></i> SQL</span>
+      </div>
+    </div>
 
-    <!-- درباره من -->
-    <section class="max-w-3xl mx-auto px-4 py-10">
-        <h2 class="text-2xl font-semibold mb-4 flex items-center">
-            <span class="ml-2">👨‍💻</span>
-            درباره من
-        </h2>
-        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-            <p class="leading-relaxed">
-                من یک برنامه‌نویس وب هستم با چند سال سابقه کار حرفه‌ای در زمینه طراحی سایت‌های داینامیک، پنل مدیریت، و ربات تلگرام. 
-                علاقه‌مند به یادگیری تکنولوژی‌های جدید و حل مسائل پیچیده با راه‌حل‌های خلاقانه هستم.
-            </p>
+    <!-- درباره -->
+    <div class="about-box my-4">
+      <i class="fa-regular fa-pen-to-square me-2"></i>
+      توسعه‌دهنده نرم‌افزار با تمرکز بر اکوسیستم دات‌نت و سامانه‌های سازمانی.
+      تجربه با ASP.NET Core، EF Core، SQL Server، JWT و مدیریت دسترسی سطح‌بندی شده.
+      عاشق معماری، پنل‌های مدیریتی، سیستم‌های Call Center و کندوکاو در مستندات.
+    </div>
+
+    <!-- مهارت‌های سریع (پیل) -->
+    <div class="d-flex flex-wrap gap-2 mb-4">
+      <span class="pill-skill"><i class="fa-brands fa-microsoft me-1"></i> C#</span>
+      <span class="pill-skill">.NET</span>
+      <span class="pill-skill">ASP.NET Core</span>
+      <span class="pill-skill">EF Core</span>
+      <span class="pill-skill">REST API</span>
+      <span class="pill-skill">JWT</span>
+      <span class="pill-skill">SQL Server</span>
+      <span class="pill-skill">Razor Pages</span>
+      <span class="pill-skill">JS · AJAX</span>
+    </div>
+
+    <!-- بخش مهارت‌های فنی -->
+    <h2 class="section-title"><i class="fa-regular fa-gem me-2"></i> مهارت‌های فنی</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft p-3 h-100">
+          <h5><i class="fa-solid fa-server me-1"></i> Backend</h5>
+          <ul class="card-list">
+            <li>C# / .NET</li>
+            <li>ASP.NET Core</li>
+            <li>Entity Framework Core</li>
+            <li>REST API</li>
+            <li>JWT Auth</li>
+          </ul>
         </div>
-    </section>
-
-    <!-- مهارت‌ها -->
-    <section class="max-w-3xl mx-auto px-4 py-10">
-        <h2 class="text-2xl font-semibold mb-4 flex items-center">
-            <span class="ml-2">🛠️</span>
-            مهارت‌ها
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-                <h3 class="font-semibold mb-4">مهارت‌های فنی</h3>
-                <div id="skills-technical" class="space-y-3"></div>
-            </div>
-            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-                <h3 class="font-semibold mb-4">مهارت‌های طراحی</h3>
-                <div id="skills-design" class="space-y-3"></div>
-            </div>
-            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-                <h3 class="font-semibold mb-4">مهارت‌های شبکه</h3>
-                <div id="skills-network" class="space-y-3"></div>
-            </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft p-3 h-100">
+          <h5><i class="fa-solid fa-database me-1"></i> Database</h5>
+          <ul class="card-list">
+            <li>SQL Server</li>
+            <li>Database Design</li>
+            <li>EF Migrations</li>
+            <li>Fluent API</li>
+          </ul>
         </div>
-    </section>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft p-3 h-100">
+          <h5><i class="fa-regular fa-window-maximize me-1"></i> Frontend</h5>
+          <ul class="card-list">
+            <li>HTML / CSS</li>
+            <li>JavaScript</li>
+            <li>AJAX</li>
+            <li>Razor Pages</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft p-3 h-100">
+          <h5><i class="fa-solid fa-screwdriver-wrench me-1"></i> Tools</h5>
+          <ul class="card-list">
+            <li>Visual Studio</li>
+            <li>VS Code</li>
+            <li>Chrome DevTools</li>
+            <li>Git</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-    <!-- پروژه‌ها -->
-<!-- پروژه‌ها -->
-<section class="max-w-3xl mx-auto px-4 py-10">
-  <h2 class="text-2xl font-semibold mb-4 flex items-center">
-    <span class="ml-2">💼</span>
-    نمونه‌کارها (دریافت از JSON)
-  </h2>
-  <div id="project-list" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
-</section>
+    <!-- زمینه‌های تجربه -->
+    <h2 class="section-title"><i class="fa-regular fa-compass me-2"></i> زمینه‌های تجربه</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft p-3 h-100">
+          <h5><i class="fa-regular fa-building me-1"></i> سامانه‌های مدیریتی</h5>
+          <p class="text-secondary" style="font-weight:350;">پنل‌های مدیریتی، کاربران، نقش‌ها و فرآیندهای داخلی</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft p-3 h-100">
+          <h5><i class="fa-regular fa-id-card me-1"></i> احراز هویت &amp; دسترسی</h5>
+          <p class="text-secondary" style="font-weight:350;">JWT + Permission Based Access Control</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft p-3 h-100">
+          <h5><i class="fa-regular fa-headset me-1"></i> Call Center &amp; CRM</h5>
+          <p class="text-secondary" style="font-weight:350;">تحلیل فرآیندهای مراکز تماس و توسعه نرم‌افزار</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft p-3 h-100">
+          <h5><i class="fa-regular fa-bug me-1"></i> تحلیل و دیباگ</h5>
+          <p class="text-secondary" style="font-weight:350;">بررسی درخواست‌ها، Network Traffic، دیباگ</p>
+        </div>
+      </div>
+    </div>
 
+    <!-- پروژه‌های شاخص -->
+    <h2 class="section-title"><i class="fa-regular fa-folder-open me-2"></i> پروژه‌های شاخص</h2>
+    <div class="project-card">
+      <h5><i class="fa-regular fa-phone me-2"></i> سامانه مدیریت مرکز تماس</h5>
+      <p>ماژول‌های مدیریتی، کاربران، نقش‌ها و سطوح دسترسی برای استفاده داخلی سازمان.</p>
+    </div>
+    <div class="project-card">
+      <h5><i class="fa-regular fa-lock me-2"></i> سیستم احراز هویت JWT</h5>
+      <p>پیاده‌سازی ورود، مدیریت توکن و کنترل دسترسی مبتنی بر مجوزها.</p>
+    </div>
+    <div class="project-card">
+      <h5><i class="fa-regular fa-chess-queen me-2"></i> طراحی MVP بازی استراتژیک آنلاین</h5>
+      <p>مکانیک‌ها، اتحادها، نقش‌ها و ساختار کلی یک بازی آنلاین مبتنی بر Discord.</p>
+    </div>
 
-
+    <!-- در حال یادگیری -->
+    <h2 class="section-title"><i class="fa-regular fa-book-open me-2"></i> در حال یادگیری و تحقیق</h2>
+    <div class="tag-cluster">
+      <span>.NET MAUI</span>
+      <span>Software Architecture</span>
+      <span>RabbitMQ</span>
+      <span>Distributed Systems</span>
+      <span>Real‑Time Systems</span>
+    </div>
 
     <!-- فوتر -->
-    <footer class="text-center text-sm py-6 bg-gray-200 dark:bg-gray-800 mt-10">
-        <div class="max-w-3xl mx-auto px-4">
-            <p class="mb-2">© 2025 توحید رجبعلی. ساخته شده با ❤️</p>
-            <div class="flex justify-center space-x-4 space-x-reverse">
-                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-500 transition">LinkedIn</a>
-                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-500 transition">GitHub</a>
-                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-500 transition">Telegram</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- دکمه حالت تاریک -->
-    <div class="fixed bottom-5 left-5 z-50">
-        <button 
-            onclick="toggleDarkMode()" 
-            class="bg-gray-700 dark:bg-gray-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-gray-800 dark:hover:bg-gray-500 transition-all duration-200"
-        >
-            <span id="theme-icon">🌙</span>
-            <span id="theme-text" class="mr-2">حالت تاریک</span>
-        </button>
+    <div class="footer-note">
+      <strong><i class="fa-regular fa-user me-1"></i> توحید رجبعلی</strong> · توسعه‌دهنده بک‌اند دات‌نت
+      <span class="mx-2 text-secondary" style="opacity:0.4;">—</span>
+      <span style="font-weight:300;">همیشه در حال کاوش</span>
     </div>
 
-    <!-- مودال نمایش پروژه -->
-    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-gray-800 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 id="modal-title" class="text-xl font-bold"></h3>
-                    <button onclick="closeProjectModal()" class="text-gray-500 hover:text-gray-700 text-2xl">×</button>
-                </div>
-                <div id="modal-content"></div>
-            </div>
-        </div>
-    </div>
-    <script src="js/main.js"></script>
+  </div>
+  <!-- پایان کارت اصلی -->
+
+</div>
+<!-- پایان container -->
+
+<!-- Bootstrap JS (اختیاری برای تعاملات) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
